@@ -82,7 +82,8 @@ SqueezeIt::Application.configure do
 
   config.assets.precompile = ['*.js', '*.css', '*.css.erb']
 
-  config.action_mailer.perform_deliveries = true 
+
+  config.action_mailer.default_url_options = {:host => 'squeezeit.herokuapp.com', :protocol => 'http'}
   config.action_mailer.smtp_settings = {
   :address => "smtp.gmail.com",
   :port => 587,
