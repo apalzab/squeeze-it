@@ -65,7 +65,11 @@
         <!-- /.container -->
     </nav>
 
-    <section class="notice">
+
+<%= yield %>
+
+
+ <section class="notice">
       <% if notice %>
         <p><%= notice %></p>
       <% end %>
@@ -74,9 +78,6 @@
       <% end %>
     </section>
 
-
-
-<%= yield %>
 
 <!-- Core JavaScript Files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
