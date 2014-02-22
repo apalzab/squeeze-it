@@ -1,0 +1,2 @@
+module SqueezescontrollerHelper
+end

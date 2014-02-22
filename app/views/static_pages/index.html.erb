@@ -1,0 +1,44 @@
+    <section class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">squeeze it</h1>
+                        <p class="intro-text">Imagina, crea, comparte, escribe, lee, conoce, prueba... Siente </p>
+                        <div class="page-scroll">
+                            <a href="#sign-in-up" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down animated"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sign-in-up" class="container sign-in-up">
+        <div class="row">
+            <article class="col-lg-4 col-lg-offset-2">
+              <header><h2>Inicia Sesión</h2></header>
+                <%= form_for(:user, :url => session_path(:user)) do |f| %>
+                    <ul>
+                        <li><%= email_field("user", "email", :placeholder => "email@example.com") %></li>
+                        <li><%= f.password_field("password", :placeholder => "password") %></li>
+                        <li><%= f.submit 'Sign in' %></li>
+                        <!-- <li><%= f.label :remember_me %><%= f.check_box :remember_me %></li> -->
+                        <!-- <li><%= link_to "Forgot your password?", new_password_path(:user) %></li> -->
+                    </ul>
+                <% end %>
+            </article>
+            <article class="col-lg-4 col-lg-offset-2">
+                <header><h2>Regístrate</h2></header>
+                    <%= form_for(:user, :as => :user, :url => registration_path(:user)) do |f| %>
+                          <ul>
+                              <li><%= email_field("user", "email", :placeholder => "email@example.com") %></li>
+                              <li><%= f.password_field("password", :placeholder => "password") %><%= f.password_field("password_confirmation", :placeholder => "repeat password") %></li>
+                              <li><%= f.submit "Sign up" %></li>
+                          </ul>
+                    <% end %>
+            </article>
+        </div>
+    </section>
