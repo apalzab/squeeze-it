@@ -4,5 +4,5 @@
 ### Welcome to the micro storytelling social network
 
 
-##### You can take a glance at squeezeit.herokuapp.com
+##### You can take a glance at [squeezeit.herokuapp.com](http://squeezeit.herokuapp.com)
 
