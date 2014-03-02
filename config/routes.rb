@@ -17,7 +17,7 @@ SqueezeIt::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :squeezes
+  resources :squeezes, :static_pages
 
     authenticated :user do
       root :to => "squeezes#index", :as => "authenticated_root"

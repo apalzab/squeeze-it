@@ -340,6 +340,9 @@ body {
 
                 li {
                     padding-bottom: 1.5em;
+                    input {
+                        font-size: 1.2em;
+                    }
                     input[type="email"], input[type="password"] {
                         // width: 60%;
                         border: none;
@@ -347,20 +350,22 @@ body {
                             outline: none;
                         }
                     }
-                    input[type="submit"] {
+                     input[type="submit"] {
                         background-color: #ffffff;
                         padding: .8em 2em;
                         margin: 0 auto;
                         color: #A9ABBB;
                         width: 53%;
                         border: 1px solid;
-                        @include transition (all .8s ease-in-out);
+                        @include transition (all 2s linear);
                         &:hover {
-                            background-color: #A9ABBB;
-                            color: #ffffff;
-                            opacity: .3;
+                            @include box-shadow(0 0 5px 3px hsla(233, 12%, 70%, 1));
+                            // @include transform(scale(1.1));
+                            // background-color: #A9ABBB;
+                            // color: #000;
+                            // opacity: .3;
                             position: relative;
-                            top: 1px;
+                            top: 3px;
                         }
                         &:focus {
                             outline-color: #A9ABBB;
