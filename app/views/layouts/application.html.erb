@@ -13,71 +13,74 @@
     <%= yield :head %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+
+    <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+    typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+    b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+    mixpanel.init("YOUR TOKEN");</script><!-- end Mixpanel -->
 </head>
 <body>
 
-      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="/">
-                    <i class="fa fa-play-circle"></i>  <span class="light">Micro</span> Relatos
-                </a>
-            </div>
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="">
+      <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+              <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="/">
+              <i class="fa fa-play-circle"></i>  <span class="light">Micro</span> Relatos
+          </a>
+      </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <% unless user_signed_in? %>
-                      <li class="page-scroll">
-                        <a href="#sign-in-up">Inicia Sesión</a>
-                      </li>
-                      <li class="page-scroll">
-                        <a href="#sign-in-up">Regístrate</a>
-                      </li>
-                    <% end %>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+          <ul class="nav navbar-nav">
+              <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+              <li class="hidden">
+                  <a href="#page-top"></a>
+              </li>
+              <% unless user_signed_in? %>
+                <li class="page-scroll">
+                  <a href="#sign-in-up">Inicia Sesión</a>
+                </li>
+                <li class="page-scroll">
+                  <a href="#sign-in-up">Regístrate</a>
+                </li>
+              <% end %>
 
-                    <% if user_signed_in? %>
-                      <li class="dropdown" style="" :="">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="dropdown-text">@<%= current_user.email[/[^@]+/] %></a>
-                        <ul class="dropdown-menu" aria-labelledby="download">
-                          <li><a href="profile.html">Perfil</a></li>
-                          <li class="divider"></li>
-                          <li id="log-out"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></li>
-                        </ul>
-                     </li>
-                      <!--<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> -->
-                    <% end %>
-                    
-                    <!-- <li class="page-scroll">
-                        <a href="#download">Quiénes somos</a>
-                    </li> -->
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
+              <% if user_signed_in? %>
+                <li><%= link_to "New Squeeze", new_squeeze_path %></li>
+                <li class="dropdown" style="" :="">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="dropdown-text">@<%= current_user.email[/[^@]+/] %></a>
+                  <ul class="dropdown-menu" aria-labelledby="download">
+                    <li><a href="profile.html">Perfil</a></li>
+                    <li class="divider"></li>
+                    <li id="log-out"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></li>
+                  </ul>
+               </li>
+                <!--<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> -->
+              <% end %>
+              
+              <!-- <li class="page-scroll">
+                  <a href="#download">Quiénes somos</a>
+              </li> -->
+          </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
 
 <%= yield %>
 
-
  <section class="notice">
-      <% if notice %>
-        <p><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p><%= alert %></p>
-      <% end %>
-    </section>
-
+  <% unless notice.blank? %>
+    <p><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p><%= alert %></p>
+  <% end %>
+</section>
 
 <!-- Core JavaScript Files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

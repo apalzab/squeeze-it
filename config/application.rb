@@ -21,5 +21,6 @@ module SqueezeIt
     config.i18n.default_locale = :es
 
     config.autoload_paths = %W(#{config.root}/lib)
+
   end
 end

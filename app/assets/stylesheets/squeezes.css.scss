@@ -1,7 +1,63 @@
 // Place all the styles related to the squeezescontroller controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bourbon";
 
 .navbar {
   padding: 0;
+}
+
+.main {
+  padding-top: 8em;
+  color: black;
+}
+
+.box {
+  margin-bottom: 3em;
+  overflow: hidden;
+}
+
+@mixin borders {
+  
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
+}
+
+.profile {
+
+  .wrapper {
+    // background-color: #000000;
+    background: -webkit-gradient(linear, 0% 0%, 31% 96%, from(#3A3A3A), to(#666666), color-stop(.4,#353535));
+    @include border-top-radius(5px);
+    .description {
+      padding: 1.5em .5em 1.5em .5em;
+      color: #ffffff;
+      text-align: center;
+
+        img {
+        width: 30%;
+        padding-bottom: 1em;
+        }
+    }
+  }
+  .info {
+    color: red;
+    border: 1px solid black;
+    ul {
+      padding-left: 0;
+
+      li {
+        list-style: none;
+        border-left: 1px solid black;
+      }
+    }
+  }
+
+  .actions {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    @include border-bottom-radius(5px);
+  }
 }

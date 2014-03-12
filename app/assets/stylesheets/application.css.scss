@@ -1,6 +1,7 @@
 @import "bourbon";
 @import "grayscale";
 @import "static_pages";
+@import "devise";
 // @import "squeezes";
 
 /*
@@ -18,10 +19,10 @@
  */
 
 body {
-  // padding-top: 6.4em;
+  // padding-top: 8em;
 }
 
 .notice {
   color: #000000;
-  padding-top: 8em;
+  // padding-top: 8em;
 }

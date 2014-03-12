@@ -4,7 +4,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use postgres as the database for Active Record
-  gem "pg"
+gem "pg"
+
+# Mixpanel for event tracking
+gem 'mixpanel-ruby'
 
 # User authentication and session
 gem 'devise'
