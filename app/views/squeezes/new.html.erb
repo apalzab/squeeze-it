@@ -1,0 +1,18 @@
+<textarea maxlength="100" name="styled-textarea" id="styledd" onfocus="this.value=''; setbg('#e5fff3'	);" onblur="setbg('white')">
+	Enter title...
+</textarea>
+<div id="botones">
+	<input type="button" name="Submit" value="N" onclick="formato('bold')" />
+	<input type="button" name="Submit2" value="C" onclick="formato('italic')" />
+	<input type="button" name="Submit3" value="S" onclick="formato('underline')" />
+	<input type="button" name="Submit10" value="deshacer" onclick="formato('undo')" />
+	<input type="button" name="Submit11" value="rehacer" onclick="formato('redo')" />
+	<input type="button" name="submit9" onClick="iFontSize()" value="Text size">
+	<input type="button" name="Submit11" value="publicar" />
+	<input type="button" name="submit9"  value="guardar">
+	<input type="button" name="submit9"  value="salir">
+</div>
+<div id="texto">
+	<iframe id="edit"></iframe>
+	<div id="ht"></div> 
+</div>
