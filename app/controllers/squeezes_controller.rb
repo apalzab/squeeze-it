@@ -4,4 +4,7 @@ class SqueezesController < ApplicationController
 
   def index
   end
+
+  def new
+  end
 end
