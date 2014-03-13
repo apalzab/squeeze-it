@@ -63,6 +63,15 @@
 }
 
 
+// manuel section start
+
+
+.create-squeeze {
+  background-image: url('textura.jpg');
+  padding-top: 6em;
+}
+
+
 input{
   border:1px solid #000;
   background:#fff;
@@ -70,10 +79,8 @@ input{
   /*font-family: 'Crimson Text', serif;*/
   font-size:11px;
   margin-bottom:11px;
-} 
-body{
-  background-image: url('textura.jpg');
 }
+
 #form1{
   width: 50%;
   background-color: #fff;
