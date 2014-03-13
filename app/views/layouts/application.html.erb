@@ -49,7 +49,11 @@
               <% end %>
 
               <% if user_signed_in? %>
-                <li><%= link_to "New Squeeze", new_squeeze_path %></li>
+                  <% if current_page?(new_squeeze_path) %>
+                    <li class="active"><%= link_to "New Squeeze", new_squeeze_path %></li>
+                  <% else %>
+                    <li><%= link_to "New Squeeze", new_squeeze_path %></li>
+                  <% end %>
                 <li class="dropdown" style="" :="">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="dropdown-text">@<%= current_user.email[/[^@]+/] %></a>
                   <ul class="dropdown-menu" aria-labelledby="download">
