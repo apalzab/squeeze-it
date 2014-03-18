@@ -7,22 +7,27 @@
     <article class="profile box">
       <div class="wrapper col-md-10">
         <div class="description">
-          <%= image_tag "intro-bg1.jpg" %>
-          <h5>Aitor Palacios</h5>
-          <h6>@apalzab</h6>
+          <%= image_tag "intro-bg1.jpg", class: "img-rounded" %>
+          <header>
+            <h4>Aitor Palacios</h4>
+            <h6>@apalzab</h6>
+          </header>
         </div>
       </div>
-      <div class="info col-md-10">
+      <div class="info col-md-10 bold">
         <ul>
           <li class="col-md-4">Squeezes</li>
           <li class="col-md-4">Followers</li>
           <li class="col-md-4">Following</li>
         </ul>
+        <ul>
+          <li class="col-md-4"><%= current_user.squeezes.count %></li>
+          <li class="col-md-4"><%= current_user.followers.count %></li>
+          <li class="col-md-4"><%= current_user.followed_users.count %></li>
+        </ul>
       </div>
       <div class="actions col-md-10">
-        <ul>
-          <li class="col-md-4">New Squeeze</li>
-        </ul>
+        <%= link_to "New Squeeze", new_squeeze_path, class: "btn" %>
       </div>
     </article>
 
@@ -31,11 +36,15 @@
     </article>
   </section>
 
-  <section class="right-container col-md-8">
-    <h2>Right container</h2>
-    <article class="lasts-squeezes box">
-      <h3>Lasts Squeezes box</h3>
-    </article>
+  <section class="squeezes col-md-8">
+    <h2>Lasts Squeezes</h2>
+    <div class="separator"><hr></div>
+    <% @last_squeezes.each do |squeeze| %>
+      <article class="squeeze">
+
+        <h1><%= squeeze.title %></h1>
+      </article>
+    <% end %>
   </section>
 </section>
 
