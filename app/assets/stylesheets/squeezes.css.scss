@@ -81,11 +81,9 @@
 .squeezes {
   border: 1px solid black;
   border-radius: 5px;
-  .separator {
-
-  }
+  padding: 0;
   .squeeze {
-
+    border-top: 1px solid black;
   }
 }
 
