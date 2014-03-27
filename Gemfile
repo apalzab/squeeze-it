@@ -15,6 +15,9 @@ gem 'devise'
 # A simple and lightweight mixin library for Sass
 gem 'bourbon'
 
+#New Relic added for monitoring
+gem 'newrelic_rpm'
+
 group :production, :staging do
 end
 
