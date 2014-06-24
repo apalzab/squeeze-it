@@ -20,6 +20,11 @@ gem 'bourbon'
 #New Relic added for monitoring
 gem 'newrelic_rpm'
 
+# Rich text editor
+gem 'tinymce-rails'
+
+gem 'formtastic'
+
 group :production, :staging do
 end
 
