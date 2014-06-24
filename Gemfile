@@ -6,6 +6,8 @@ gem 'rails', '4.0.2'
 # Use postgres as the database for Active Record
 gem "pg"
 
+gem 'puma'
+
 # Mixpanel for event tracking
 gem 'mixpanel-ruby'
 
