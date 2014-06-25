@@ -15,6 +15,7 @@ class SqueezesController < ApplicationController
   end
 
   def update
+    raise 'ok'
     @squeeze = Squeeze.find(params[:id]).update_attributes!(squeeze_params)
     render 'show'
   end

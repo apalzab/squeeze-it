@@ -129,15 +129,22 @@
       height: 65em;
       padding: 3em;
     }
-    .save {
+    .actions {
       float: right;
-      background: white;
-      border: 1px solid rgba(51, 51, 51, .3);
-      border-top: none;
-      padding: 1em;
-      transition: all .3s linear;
-      &:hover {
-        background: rgba(51, 51, 51, 0.2);
+      ul {
+        li {
+          display: inline;
+          input {
+            padding: 1em;
+            background: white;
+            border: 1px solid rgba(51, 51, 51, .3);
+            border-top: none;
+            transition: all .3s linear;
+            &:hover {
+              background: rgba(51, 51, 51, 0.2);
+            }
+          }
+        }
       }
     }
   }
