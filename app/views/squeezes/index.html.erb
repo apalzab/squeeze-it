@@ -36,12 +36,12 @@
     </article>
   </section>
 
-  <section class="squeezes col-md-8">
-    <h2>Last Squeezes</h2>
+  <section class="squeezes-all col-md-8">
+    <h2>Squeezes</h2>
     <% @last_squeezes.each do |squeeze| %>
       <article class="squeeze">
-
-        <h1><%= squeeze.title %></h1>
+        <h3><%= squeeze.title %></h3>
+        <p><%= squeeze.content.to_s.truncate(120, omission: '...') %></p>
       </article>
     <% end %>
   </section>

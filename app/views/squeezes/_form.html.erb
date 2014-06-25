@@ -10,6 +10,9 @@
       <li></li>
     </ul> -->
   </nav>
+  <div class="lights">
+    <span class="off"></span>
+  </div>
   <%= semantic_form_for @squeeze do |f| %>
     <section class="title">
       <%= f.input :title, :label => false, :placeholder => 'título', input_html: { autocomplete: 'off' }%>

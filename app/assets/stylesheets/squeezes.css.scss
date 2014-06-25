@@ -78,16 +78,36 @@
   }
 }
 
-.squeezes {
+.squeezes-all {
   border: 1px solid black;
   border-radius: 5px;
   padding: 0;
   .squeeze {
     border-top: 1px solid black;
+    h3 {
+      margin-bottom: 0;
+    }
   }
 }
 
 .create-squeeze {
+  .lights {
+    span {
+      width: 8%;
+      height: 8em;
+      position: fixed;
+      right: 0;
+      &.on {
+        background: url('on.png')  no-repeat bottom center scroll;
+      }
+      &.off {
+        background: url('off.png')  no-repeat bottom center scroll;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
   form {
     border: none;
   }
@@ -103,7 +123,7 @@
   .title {
     width: 30%;
     margin: 0 auto;
-    padding-top: 3em;
+    padding-top: 6em;
     input {
       width: 100%;
       text-align: center;
@@ -148,6 +168,10 @@
       }
     }
   }
+}
+
+li {
+  list-style: none;
 }
 
 
