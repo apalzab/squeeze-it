@@ -29,6 +29,7 @@
       <!-- <textarea rows="4" cols="50" placeholder="squueeze yourself"> -->
       <%= f.input :content, :label => false, :as => :text, :placeholder => 'suqeeze yourself', input_html: { autocomplete: 'off' }%>
       </textarea> 
+      <%= hidden_field(:squeeze, :publish, :value => true) %>
       <!--
       <%= text_area_tag :content, "", :class => "tinymce", :rows => 40, :cols => 120, :placeholder => 'squeeze yourself' %>
       <%= tinymce %> -->

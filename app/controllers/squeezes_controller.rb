@@ -3,7 +3,13 @@ class SqueezesController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @last_squeezes = Squeeze.order(created_at: :desc).limit(30)
+    if params[:id].nil?
+      @user = current_user
+      @last_squeezes = Squeeze.publish.recents.limit(30)
+    else
+      @user = User.find(params[:id])
+      @last_squeezes = @user.squeezes.publish.recents.limit(10)
+    end
   end
 
   def new
@@ -26,11 +32,12 @@ class SqueezesController < ApplicationController
   end
 
   def show
+    @squeeze = Squeeze.find(params[:id])
   end
 
   private
   def squeeze_params
-    params.require(:squeeze).permit(:title, :content)
+    params.require(:squeeze).permit(:title, :content, :publish)
   end
 
 end

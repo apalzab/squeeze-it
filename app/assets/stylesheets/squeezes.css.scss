@@ -181,6 +181,29 @@ li {
   list-style: none;
 }
 
+.squeezes.show {
+  .wrapper {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 9em;
+    .squeeze {
+      width: 100%;
+      color: black;
+      .info {
+        header {
+          h1 {
+            text-transform: none;
+            margin-bottom: 0;
+          }
+        }
+        p {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
 
 //////////////////////////
 //////////////////////////

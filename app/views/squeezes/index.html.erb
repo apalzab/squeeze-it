@@ -21,9 +21,9 @@
           <li class="col-md-4">Following</li>
         </ul>
         <ul>
-          <li class="col-md-4"><%= current_user.squeezes.count %></li>
-          <li class="col-md-4"><%= current_user.followers.count %></li>
-          <li class="col-md-4"><%= current_user.followed_users.count %></li>
+          <li class="col-md-4"><%= @user.squeezes.count %></li>
+          <li class="col-md-4"><%= @user.followers.count %></li>
+          <li class="col-md-4"><%= @user.followed_users.count %></li>
         </ul>
       </div>
       <div class="actions col-md-10">
@@ -40,7 +40,7 @@
     <h2>Squeezes</h2>
     <% @last_squeezes.each do |squeeze| %>
       <article class="squeeze">
-        <h3><%= squeeze.title %></h3>
+        <h3><%= link_to squeeze.title, squeeze %></h3>
         <p><%= squeeze.content.to_s.truncate(120, omission: '...') %></p>
       </article>
     <% end %>
