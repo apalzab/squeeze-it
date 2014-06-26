@@ -23,7 +23,10 @@ gem 'newrelic_rpm'
 # Rich text editor
 gem 'tinymce-rails'
 
-gem 'formtastic'
+gem 'formtastic', '~> 2.3.0.rc3'
+
+# For website administration
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 group :production, :staging do
 end
