@@ -8,10 +8,18 @@ ActiveAdmin.register Squeeze do
   #
   # or
   #
-  # permit_params do
-  #  permitted = [:permitted, :attributes]
+  permit_params do
+   permitted = [:title, :content, :publish, :user_id]
   #  permitted << :other if resource.something?
-  #  permitted
+   permitted
+  end
+
+  #  index do
+  #   selectable_column
+  #   column :title
+  #   column :content => proc {} 
+  #   actions
   # end
+
   
 end
