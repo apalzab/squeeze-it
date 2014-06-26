@@ -1,0 +1,54 @@
+<section class="create-squeeze">
+  <nav>
+<!--     <ul>
+      <li>dmnssjkdjk</li>
+      <li>dmnssjkdjk</li>
+      <li>dmnssjkdjk</li>
+      <li>dmnssjkdjk</li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul> -->
+  </nav>
+  <div class="lights">
+    <span class="off"></span>
+  </div>
+  <%= semantic_form_for @squeeze do |f| %>
+    <section class="title">
+      <%= f.input :title, :label => false, :placeholder => 'título', input_html: { autocomplete: 'off' }%>
+      <!-- <input type="text" placeholder="título"> -->
+    </section>
+
+    <section class="content">
+      <div class="actions">
+        <ul>
+          <%= f.action :submit, :button_html => { :class => "save", :disable_with => 'Guardando', :value => 'Guardar squeeze' } %>
+          <!-- <%= f.action :submit, :button_html => { :class => "save", :disable_with => 'Guardando', :value => 'Guardar y Publicar' } %> -->
+        </ul>
+      </div>
+      <!-- <textarea rows="4" cols="50" placeholder="squueeze yourself"> -->
+      <%= f.input :content, :label => false, :as => :text, :placeholder => 'suqeeze yourself', input_html: { autocomplete: 'off' }%>
+      </textarea> 
+      <!--
+      <%= text_area_tag :content, "", :class => "tinymce", :rows => 40, :cols => 120, :placeholder => 'squeeze yourself' %>
+      <%= tinymce %> -->
+    </section>
+  <% end %>
+
+  <!-- <textarea maxlength="100" name="styled-textarea" id="styledd" placeholder="título..."></textarea>
+  <div id="botones" class="styles">
+    <input type="button" name="Submit" value="N" onclick="formato('bold')" />
+    <input type="button" name="Submit2" value="C" onclick="formato('italic')" />
+    <input type="button" name="Submit3" value="S" onclick="formato('underline')" />
+    <input type="button" name="Submit10" value="deshacer" onclick="formato('undo')" />
+    <input type="button" name="Submit11" value="rehacer" onclick="formato('redo')" />
+    <input type="button" name="submit9" onClick="iFontSize()" value="Text size">
+    <input type="button" name="Submit11" value="publicar" />
+    <input type="button" name="submit9"  value="guardar">
+    <input type="button" name="submit9"  value="salir">
+  </div>
+  <div id="texto">
+    <iframe id="edit"></iframe>
+    <div id="ht"></div> 
+  </div> -->
+</section>
