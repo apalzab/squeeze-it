@@ -16,5 +16,14 @@
       <% end %>
     <% end %>
   </section>
+
+  <section class="squeezes-all col-md-8">
+    <h2>My Squeezes</h2>
+    <% current_user.squeezes.each do |squeeze| %>
+      <% cache squeeze do %>
+        <%= render squeeze %>
+      <% end %>
+    <% end %>
+  </section>
 </section>
 

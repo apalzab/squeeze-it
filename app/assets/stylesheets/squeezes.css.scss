@@ -21,6 +21,18 @@
   font-weight: bold;
 }
 
+a {
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  &.user {
+    color: #28c3ab;
+  }
+  &:hover {
+    opacity: .7;
+  }
+}
+
 .profile {
 
   .wrapper {
@@ -82,6 +94,7 @@
   border: 1px solid black;
   border-radius: 5px;
   padding: 0;
+  margin-bottom: 3em;
   h2:first-child {
     margin-bottom: .4em;
     margin-left: .5em;
@@ -96,7 +109,11 @@
     }
     .content {
       float: left;
-      width: 80%
+      width: 80%;
+      a {
+        color: black;
+        font-weight: bol
+      }
     }
     h3 {
       margin-bottom: 0;

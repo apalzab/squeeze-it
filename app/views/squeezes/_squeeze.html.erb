@@ -1,7 +1,7 @@
 <article class="squeeze">
   <div class="info">
     <span></span>
-    <span><%= link_to squeeze.user.username, squeeze.user %></span>
+    <span><%= link_to squeeze.user.username, squeeze.user, class: 'user' %></span>
     <span><%= l squeeze.created_at, format: :short %></span>
   </div>
   <div class="content">

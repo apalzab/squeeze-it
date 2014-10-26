@@ -3,7 +3,6 @@ class SqueezesController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-      @user = current_user
       @last_squeezes = Squeeze.publish.recents.limit(30)
   end
 
