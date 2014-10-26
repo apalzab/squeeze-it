@@ -1,0 +1,11 @@
+<article class="squeeze">
+  <div class="info">
+    <span></span>
+    <span><%= link_to squeeze.user.username, squeeze.user %></span>
+    <span><%= l squeeze.created_at, format: :short %></span>
+  </div>
+  <div class="content">
+    <h3><%= link_to squeeze.title, squeeze %></h3>
+    <p><%= squeeze.content.to_s.truncate(120, omission: '...') %></p>
+  </div>
+</article>

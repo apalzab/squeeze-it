@@ -1,0 +1,26 @@
+<article class="profile box">
+  <div class="wrapper col-md-10">
+    <div class="description">
+      <%= image_tag "intro-bg1.jpg", class: "img-rounded" %>
+      <header>
+        <h4><%=  %></h4>
+        <h6><%= user.username %></h6>
+      </header>
+    </div>
+  </div>
+  <div class="info col-md-10 bold">
+    <ul>
+      <li class="col-md-4">Squeezes</li>
+      <li class="col-md-4">Followers</li>
+      <li class="col-md-4">Following</li>
+    </ul>
+    <ul>
+      <li class="col-md-4"><%= user.squeezes.count %></li>
+      <li class="col-md-4"><%= user.followers.count %></li>
+      <li class="col-md-4"><%= user.followed_users.count %></li>
+    </ul>
+  </div>
+  <div class="actions col-md-10">
+    <%= link_to "New Squeeze", new_squeeze_path, class: "btn" %>
+  </div>
+</article>
