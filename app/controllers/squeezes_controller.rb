@@ -3,12 +3,15 @@ class SqueezesController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+    # raise 'ok'
     if params[:id].nil?
       @user = current_user
       @last_squeezes = Squeeze.publish.recents.limit(30)
+      # fresh_when(@last_squeezes)
     else
       @user = User.find(params[:id])
       @last_squeezes = @user.squeezes.publish.recents.limit(10)
+      # fresh_when(@last_squeezes)
     end
   end
 

@@ -84,10 +84,20 @@
   padding: 0;
   h2:first-child {
     margin-bottom: .4em;
+    margin-left: .5em;
   }
   .squeeze {
     border-top: 1px solid black;
     padding: 1em 1em 0 1em;
+    clear: both;
+    .info {
+      width: 20%;
+      float: left;
+    }
+    .content {
+      float: left;
+      width: 80%
+    }
     h3 {
       margin-bottom: 0;
     }
@@ -140,6 +150,11 @@
       border: none;
       border-bottom: 1px solid rgba(51, 51, 51, .3);
       outline: none;
+      background: transparent;
+      &.dark {
+        border-bottom: 1px solid white;
+        color: white;
+      }
     }
   }
   .content {
@@ -169,6 +184,14 @@
             transition: all .3s linear;
             &:hover {
               background: rgba(51, 51, 51, 0.2);
+            }
+            &.dark {
+              color: white;
+              background: none;
+              border: none;
+              &:hover {
+                opacity: .7;
+              }
             }
           }
         }

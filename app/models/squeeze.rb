@@ -12,9 +12,11 @@
 #
 
 class Squeeze < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user#, touch: true
 
   before_save :update_attrs
+
+  # add likes and liked
 
   scope :publish, -> { where('publish = ?', true) }
   scope :recents, -> { order('published_at ASC') }

@@ -15,19 +15,18 @@
   </div>
   <%= semantic_form_for @squeeze do |f| %>
     <section class="title">
-      <%= f.input :title, :label => false, :placeholder => 'título', input_html: { autocomplete: 'off' }%>
+      <%= f.input :title, :label => false, :placeholder => 'title', input_html: { autocomplete: 'off' }%>
       <!-- <input type="text" placeholder="título"> -->
     </section>
 
     <section class="content">
       <div class="actions">
         <ul>
-          <%= f.action :submit, :button_html => { :class => "save", :disable_with => 'Guardando', :value => 'Guardar squeeze' } %>
-          <!-- <%= f.action :submit, :button_html => { :class => "save", :disable_with => 'Guardando', :value => 'Guardar y Publicar' } %> -->
+          <%= f.action :submit, :button_html => { :class => "save", :disable_with => 'Saving...', :value => 'Save squeeze' } %>
+          <%= f.action :submit, :button_html => { :class => "save", :disable_with => 'Guardando', :value => 'Guardar y Publicar' } %>
         </ul>
       </div>
-      <!-- <textarea rows="4" cols="50" placeholder="squueeze yourself"> -->
-      <%= f.input :content, :label => false, :as => :text, :placeholder => 'suqeeze yourself', input_html: { autocomplete: 'off' }%>
+      <%= f.input :content, :label => false, :as => :text, :placeholder => 'squeeze yourself', input_html: { autocomplete: 'off' }%>
       </textarea> 
       <%= hidden_field(:squeeze, :publish, :value => true) %>
       <!--

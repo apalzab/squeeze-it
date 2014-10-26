@@ -17,6 +17,13 @@ gem 'devise'
 # A simple and lightweight mixin library for Sass
 gem 'bourbon'
 
+gem 'friendly_id', '~> 5.0.0'
+
+# Use aws-ses for email delivery
+gem "aws-ses", "~> 0.5.0", :require => 'aws/ses'
+
+gem "figaro"
+
 #New Relic added for monitoring
 gem 'newrelic_rpm'
 

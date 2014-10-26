@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  has_many :squeezes#, dependent: :destroy
+  has_many :squeezes, dependent: :destroy
 
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :reverse_relationships, foreign_key: "followed_id",
@@ -36,6 +36,11 @@ class User < ActiveRecord::Base
 
   has_many :followed_users, through: :relationships, source: :followed
   has_many :followers, through: :reverse_relationships, source: :follower
+
+  after_commit :set_username
+
+  extend FriendlyId
+  friendly_id :email, use: [:slugged, :finders]
 
   def following?(other_user)
     relationships.find_by(followed_id: other_user.id).nil?
@@ -47,6 +52,14 @@ class User < ActiveRecord::Base
 
   def unfollow!(other_user)
     relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  def set_username
+    self.username = "@#{self.email.split('@')[0]}"
+  end
+
+  def normalize_friendly_id(string)
+    "@" << "#{string.to_s.split('@')[0]}"
   end
 
 end

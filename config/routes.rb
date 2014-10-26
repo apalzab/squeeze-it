@@ -21,11 +21,13 @@ SqueezeIt::Application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :squeezes, :static_pages
 
-    authenticated :user do
-      root :to => "squeezes#index", :as => "authenticated_root"
-    end
+  authenticated :user do
+    root :to => "squeezes#index", :as => "authenticated_root"
+  end
 
     root :to => "static_pages#index"
+
+  get '/:id', to: 'users#show', as: :user
 
   # Example resource route with options:
   #   resources :products do
