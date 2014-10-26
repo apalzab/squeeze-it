@@ -110,18 +110,19 @@
 .create-squeeze {
   .lights {
     span {
-      width: 8%;
-      height: 8em;
       position: fixed;
       right: 0;
+      color: black;
       &.on {
-        background: url('on.png')  no-repeat bottom center scroll;
+        // background: url('on.png')  no-repeat bottom center scroll;
+        color: white;
       }
       &.off {
-        background: url('off.png')  no-repeat bottom center scroll;
+        // background: url('off.png')  no-repeat bottom center scroll;
       }
       &:hover {
         cursor: pointer;
+        opacity: .8;
       }
     }
   }
