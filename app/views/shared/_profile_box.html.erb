@@ -20,7 +20,9 @@
       <li class="col-md-4"><%= user.followed_users.count %></li>
     </ul>
   </div>
-  <div class="actions col-md-10">
-    <%= link_to "New Squeeze", new_squeeze_path, class: "btn" %>
-  </div>
+  <% if user == current_user %>
+    <div class="actions col-md-10">
+      <%= link_to "New Squeeze", new_squeeze_path, class: "btn" %>
+    </div>
+  <% end %>
 </article>

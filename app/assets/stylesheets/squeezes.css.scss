@@ -36,7 +36,6 @@ a {
 .profile {
 
   .wrapper {
-    // background-color: #000000;
     background: url('grey_profile_wrapper.jpg');
     @include border-top-radius(5px);
     .description {
