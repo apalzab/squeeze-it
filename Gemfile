@@ -70,6 +70,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test do
+  gem 'spinach'
+  gem 'rspec-rails'
+  gem 'capybara', '~> 2.2.1'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
